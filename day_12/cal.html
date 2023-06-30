@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #result{
+            grid-area: ip;
+            font-size: large;
+            border-radius: 10px;
+        }
+        h2{
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: -10px;
+        }
+        .abc{
+            display: grid;
+            justify-items: center;
+            /* background-color:rgb(44, 44, 113); */
+
+            /* margin: 500px;
+            margin-right: 20px;
+            margin-top: 25px; */
+        }
+        .cal{
+            display: grid;
+            grid-template-columns: auto auto auto auto ;
+            margin-top: 50px;
+            width: 300px;
+            height: 320px;
+            grid-template-areas: 'ip ip ip ';
+            padding: 50px;
+            gap: 5px;
+            background-color: #0c1729;
+        
+        
+        }
+        .game_e{
+            background-color: white;
+            font-size: medium;
+            border-radius: 10px;
+            line-height: 10px;
+            padding: 7px;
+            transition: 0.2s;
+            
+        }
+
+        .game_e:hover{
+            transform: scale(110%);
+            background-color: grey;
+            color: azure;
+            
+        }
+        
+
+    </style>
+
+</head>
+<body>
+    <h2>Calculator</h2>
+    <div class="abc">
+        <div class="cal">
+            <input id="result" type="text" >
+            <button class="game_e" onclick="DeleteL()">DEL</button>
+            
+            <button class="game_e" onclick="AppendResult('1')">1</button>
+            <button class="game_e" onclick="AppendResult('2')">2</button>
+            <button class="game_e" onclick="AppendResult('3')">3</button>
+            <button class="game_e" onclick="AppendResult('*')">*</button>
+            <button class="game_e" onclick="AppendResult('4')">4</button>
+            <button class="game_e" onclick="AppendResult('5')">5</button>
+            <button class="game_e" onclick="AppendResult('6')">6</button>
+            <button class="game_e" onclick="AppendResult('/')">/</button>
+            <button class="game_e" onclick="AppendResult('7')">7</button>
+            <button class="game_e" onclick="AppendResult('8')">8</button>
+            <button class="game_e" onclick="AppendResult('9')">9</button>
+            <button class="game_e" onclick="AppendResult('+')">+</button>
+            <button class="game_e" onclick="AppendResult('0')">0</button>
+            <button class="game_e" onclick="AppendResult('00')">00</button>
+            <button class="game_e" onclick="AppendResult('.')">.</button>
+            <button class="game_e" onclick="AppendResult('-')">-</button>
+            <button class="game_e a" onclick="ClearResult()">AC</button>
+            <button class="game_e" onclick="AppendResult('(')">(</button>
+            <button class="game_e" onclick="AppendResult(')')">)</button>
+            
+            <button class="game_e" onclick="CalculateResult()">=</button>
+            
+        </div>
+    </div>
+    <script>
+        function AppendResult(value) {
+            document.getElementById("result").value += value;
+        }
+        function ClearResult() {
+            document.getElementById("result").value = ''; 
+        }
+        function DeleteL(){
+            var all = document.getElementById('result').value;
+            document.getElementById('result').value = all.slice(0, all.length - 1);
+        }
+        function CalculateResult() {
+                var all = document.getElementById("result").value;
+                var r = eval(all);
+                document.getElementById("result").value = r;
+                }
+    </script>
+</body>                     
+</html>
