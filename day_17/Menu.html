@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang = "en">
+   <head>
+      <meta charset = "utf-8">
+      <title>jQuery UI Menu - Default functionality</title>
+		
+      <link rel = "stylesheet"
+         href = "//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+			
+      <script type = "text/javascript" 
+         src = "https://www.tutorialspoint.com/jquery/jquery-3.6.0.js">
+      </script>
+			
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+      </script>
+
+      <script>
+         $(function() {
+            $( "#menu" ).menu();
+         });
+      </script>
+		
+      <style>
+         .ui-menu { width: 150px; }
+      </style>
+   </head>
+	
+   <body>
+      <ul id = "menu">
+         <li class = "ui-state-disabled">Team</li>
+         <li>Gopal K verma</li>
+         <li>Omer</li>
+         <li>Khaleel</li>
+			
+         <li>Prasanth
+			
+            <ul>
+               <li class = "ui-state-disabled">Krishna</li>
+               <li>Raju</li>
+               <li>Sairamkrishna </li>
+            </ul>
+				
+         </li>
+			
+         <li>Vineeth</li>
+			
+         <li>Rajeev
+            <ul>
+               <li>Lakshmi
+                  <ul>
+                     <li>Kiran</li>
+                     <li>Sai</li>
+                     <li>Javeed</li>
+                  </ul>
+               </li>
+					
+               <li>Raju
+                  <ul>
+                     <li>Arshad</li>
+                     <li>Johar</li>
+                     <li>Althamas</li>
+                  </ul>
+               </li>
+					
+               <li>Gopal</li>
+            </ul>
+         </li>
+			
+         <li class = "ui-state-disabled">Santosh</li>
+      </ul>
+   </body>
+</html>
